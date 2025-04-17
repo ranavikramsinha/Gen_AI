@@ -109,7 +109,7 @@ while True:
 
     while True:
         response = client.chat.completions.create(
-            model="gpt-4.1-mini-2025-04-14",
+            model="gpt-4.1",
             response_format={"type": "json_object"},
             messages=messages,
         )
