@@ -1,1 +1,77 @@
-<html><head><title>Index</title></head><body><h1>Mini Cursor</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Digital Clock</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #282c34;
+    color: #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .clock {
+    text-align: center;
+    background: #20232a;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #61dafb;
+  }
+  .time {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .day {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  .date {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+  <div class="clock">
+    <div class="time" id="time">00:00:00 AM</div>
+    <div class="day" id="day">Monday</div>
+    <div class="date" id="date">January 1, 2024</div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      // Time
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // hour '0' should be '12'
+      const strTime = [hours, minutes, seconds].map(val => val < 10 ? '0' + val : val).join(':') + ' ' + ampm;
+
+      // Day
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const dayStr = days[now.getDay()];
+
+      // Date
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const dateStr = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+
+      document.getElementById('time').textContent = strTime;
+      document.getElementById('day').textContent = dayStr;
+      document.getElementById('date').textContent = dateStr;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>

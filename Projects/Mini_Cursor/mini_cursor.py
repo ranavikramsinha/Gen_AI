@@ -218,7 +218,7 @@
 #         break
 #     while True:
 #         response = client.chat.completions.create(
-#             model="gpt-4", messages=messages
+#             model="gpt-4.1-mini-2025-04-14", messages=messages
 #         )
 #         parsed = json.loads(response.choices[0].message.content)
 #         messages.append({"role":"assistant","content":json.dumps(parsed)})
@@ -528,7 +528,7 @@ while True:
         break
     while True:
         response = client.chat.completions.create(
-            model="gpt-4", messages=messages
+            model="gpt-4.1-mini-2025-04-14", messages=messages
         )
         parsed = json.loads(response.choices[0].message.content)
         messages.append({"role":"assistant","content":json.dumps(parsed)})
