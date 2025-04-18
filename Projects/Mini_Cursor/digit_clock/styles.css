@@ -1,0 +1,120 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.clock-container {
+  background: linear-gradient(to bottom, #ff6ec4, #7878ff, #6a11cb);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.time {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 4.5rem;
+  letter-spacing: 0.4rem;
+  text-shadow: 0 0 15px #ff6ec4, 0 0 30px #7878ff;
+  white-space: nowrap;
+  margin-bottom: 1.5rem;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.5rem 1rem;
+}
+
+.info div {
+  flex: 1 1 45%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1.3rem;
+  padding: 0.25rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(255 255 255 / 0.3);
+}
+
+.day {
+  color: #ffdede;
+  text-shadow: 0 1px 3px rgba(255, 154, 158, 0.8);
+}
+
+.date {
+  color: #fff3d1;
+  text-shadow: 0 1px 3px rgba(250, 208, 196, 0.8);
+}
+
+.month {
+  color: #c4d9ff;
+  text-shadow: 0 1px 3px rgba(161, 196, 253, 0.8);
+}
+
+.year {
+  color: #d7f0ff;
+  text-shadow: 0 1px 3px rgba(194, 233, 251, 0.8);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .clock-container {
+    max-width: 320px;
+    padding: 1.5rem 2rem;
+  }
+
+  .time {
+    font-size: 3.5rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .info div {
+    flex: 1 1 100%;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clock-container {
+    max-width: 280px;
+    padding: 1rem 1.5rem;
+  }
+
+  .time {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .info div {
+    font-size: 1rem;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
