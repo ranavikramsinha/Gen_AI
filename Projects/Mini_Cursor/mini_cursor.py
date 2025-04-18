@@ -12,7 +12,7 @@ load_dotenv()
 # Initialize OpenAI client
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
-print("Check OpenAI model before asking anything (gpt-4.1 or gpt-4.1-mini-2025-04-14)")
+print("Don't forget to check OpenAI model before asking anything because it's cost a lot. (gpt-4.1 or gpt-4.1-mini-2025-04-14)")
 
 # ==================== Tools ====================
 
